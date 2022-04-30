@@ -1,0 +1,243 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+<style type="text/css">
+  body{
+  font-size: 11pt;
+  font-family: Segoe UI;
+}
+</style>
+![](https://user-images.githubusercontent.com/83436724/166116197-cbe1a8bc-e1df-4cac-ad5e-9f6cd9f0f43c.png)
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Modelos de clasificación aplicados a credit scoring
+#### Autor: Carlos Adrián Alarcón [LinkedIn](https://www.linkedin.com/in/carlos-adrian-alarcon-delgado/)
+
+En el presente ejemplo, vamos a desarrollar varios modelos con el fin de predecir si un cliente entrará o no en default (incumplimiento de pago). Para eso, vamos a utilizar un dataset con las siguientes variables:
+
+* Edad: edad del cliente
+* Nivel educacional: nivel educacional alcanzado por el cliente
+* Años trabajando: años de experiencia laboral del cliente
+* Ingresos: monto de ingresos del cliente encriptado
+* Deuda comercial: deuda de tipo comercial del cliente
+* Deuda crédito: deuda de consumo del cliente
+* Otras deudas: deudas no comerciales ni de consumo del cliente
+* Ratio Ingresos Deudas: proporción de ingresos sobre deudas totales del cliente
+* Default: incumplimiento de cliente en el pago
+
+### Carga de datos
+
+Comenzaremos con cargar el dataset
+
+```{r cars , message = FALSE}
+## Cargar datos
+
+library(readxl)
+library(tidyverse)
+library(RCurl)
+data_inicial = read.csv('https://raw.githubusercontent.com/calarcond/machine_learning_model/main/archivos_trabajo/data_credito.csv')
+
+## Renombrar columnas para mejor entendimiento
+
+colnames(data_inicial)[1] = 'idCliente'
+colnames(data_inicial)[4] = 'Años_Trabajando'
+
+data_inicial$Default = as.factor(data_inicial$Default)
+```
+
+### Análisis exploratorio
+
+A partir del dataset anterior, realizaremos el análisis exploratorio del dataset
+
+```{r pressure , message = FALSE}
+summary(data_inicial)
+columnas = ncol(data_inicial)
+filas = nrow(data_inicial)
+print(paste('El dataset tiene',columnas,'columnas y',filas, 'filas'))
+```
+
+Haremos, a continuación, un análisis gráfico de las variables
+
+```{r fig.align="center",fig.width = 14, fig.height=10 , message = FALSE}
+
+library(ggplot2)
+library(GGally)
+ggpairs(data_inicial[,c(2,4,5,6,7,8,9,10)], aes(color = Default))
+
+
+```
+A continuación, revisaremos si es que la variable objetivo está balanceada
+
+```{r , message = FALSE}
+table(data_inicial$Default)
+plot(data_inicial$Default) 
+
+```
+
+### DataPrep
+
+Realizaremos la transformación de la variables categóricas haciendo uso de la técnica One Hot Encoding
+
+```{r, message = FALSE}
+library(caret)
+
+dummy_vars = dummyVars('~.', data = data_inicial[,c(1:9)])
+data_modelo = data.frame(predict(dummy_vars, newdata = data_inicial))
+data_modelo$Default = data_inicial$Default
+data_modelo = data_modelo[,c(2,3,4,5,6,7,8,9,10,11,12,13,14)]
+summary(data_modelo)
+
+```
+Con todas las variables, procederemos a hacer el split entre los sets de train y de test. En este caso, utilizaremos una proporción 70% vs. 30%
+
+```{r , message = FALSE}
+library(dplyr)
+split = sample(c(rep(0,0.7*nrow(data_modelo)),rep(1,0.3*nrow(data_modelo))))
+data_modelo$split = split
+train = data_modelo[split == 0,]
+train = subset(train, select = -c(14))
+test = data_modelo[split == 1,]
+test = subset(test, select = -c(14))
+train = train %>% mutate(DefaultObj = case_when(Default == '1' ~ 1, TRUE ~ 0))
+test = test %>% mutate(DefaultObj = case_when(Default == '1' ~ 1, TRUE ~ 0))
+
+```
+
+### Entrenamiento de modelos
+
+Ahora, entrenaremos diversos modelos. Por el momento, no entraremos al detalle técnico de cada uno, solamente nos enfocaremos en la implementación básica del modelo.
+
+#### XGBoost
+```{r , message = FALSE, results = FALSE}
+library(xgboost)
+library(e1071)
+x_train = data.matrix(subset(train, select = -c(13,14)))
+y_train = train$DefaultObj
+x_test = data.matrix(subset(test, select = -c(13,14)))
+y_test = test$DefaultObj
+
+xgb_train = xgb.DMatrix(data = x_train, label = y_train)
+xgb_test = xgb.DMatrix(data = x_test, label = y_test)
+modelo_xgb = xgboost(data = xgb_train, nrounds = 50, objective = 'binary:logistic')
+summary(modelo_xgb)
+pred_test = predict(modelo_xgb, xgb_test)
+```
+
+
+```{r , message = FALSE}
+### Probabilidades
+y_pred_xgb = as.numeric(pred_test > 0.5)
+cm_xgb = table(y_test,y_pred_xgb)
+confusionMatrix(cm_xgb)
+
+
+```
+
+
+```{r , message = FALSE}
+
+importance_matrix = xgb.importance(model = modelo_xgb)
+xgb.plot.importance(importance_matrix = importance_matrix)
+
+```
+
+Ahora, generaremos la curva ROC
+
+```{r , message = FALSE}
+
+library(ROCR)
+library(pROC)
+
+roc_xgb = roc(y_test, pred_test)
+auc(roc_xgb)
+ggroc(roc_xgb)
+```
+
+#### Random Forest
+
+```{r , message = FALSE}
+library(randomForest)
+
+train_final = train[,c(1,2,3,4,5,6,7,8,9,10,11,12,13)]
+modelo_rf = randomForest( Default~.,
+                         data = train_final,
+                         ntree = 10)
+
+y_pred_rf = predict(modelo_rf, x_test)
+y_pred_prob_rf = predict(modelo_rf, x_test, type = 'prob')
+cm_rf = table(y_test,y_pred_rf)
+confusionMatrix(cm_rf)
+importance(modelo_rf)
+plot(modelo_rf)
+curva_roc_rf = roc(y_test,y_pred_prob_rf[,2])
+auc(curva_roc_rf)
+ggroc(curva_roc_rf)
+```
+
+#### Naive Bayes
+
+```{r , message = FALSE}
+library(e1071)
+library(caTools)
+
+modelo_nb = naiveBayes(Default ~.,
+                       data = train_final)
+
+y_pred_nb = predict(modelo_nb, x_test)
+y_pred_nb_num = as.numeric(y_pred_nb)
+y_pred_prob_nb = predict(modelo_nb, x_test, type = 'raw')
+prediccion_nb = prediction(y_pred_nb_num,y_test)
+cm_nb = table(y_test,y_pred_nb)
+confusionMatrix(cm_nb)
+roc_nb = roc(y_test,y_pred_prob_nb[,2])
+auc(roc_nb)
+ggroc(roc_nb)
+
+```
+
+#### Support Vector Machine
+ 
+```{r , message = FALSE}
+modelo_svm = svm(Default ~.,
+                 data = train_final,
+                 type = 'C-classification',
+                 kernel = 'radial',
+                 probability = TRUE)
+
+y_pred_svm = predict(modelo_svm, x_test)
+y_pred_prob_svm = predict(modelo_svm, x_test, probability = TRUE)
+y_pred_prob_svm_prob = attr(y_pred_prob_svm,'probabilities')
+cm_svm = table(y_test, y_pred_svm)
+confusionMatrix(cm_svm)              
+roc_svm = roc(y_test, y_pred_prob_svm_prob[,2])
+auc(roc_svm)
+ggroc(roc_svm)
+```
+
+### Comparación final
+
+```{r , message = FALSE}
+
+ggroc(list(naive_bayes = roc_nb, svm = roc_svm, random_forest = curva_roc_rf, xgboost = roc_xgb))
+
+print(auc(roc_svm))
+print(auc(roc_nb))
+print(auc(curva_roc_rf))
+print(auc(roc_xgb))
+
+```
+
+### Conclusiones
+
+En este notebook hemos visto la aplicación bastante genérica de 04 algoritmos de machine learning para resolver un problema de clasificación. En general, esto es una introducción a la aplicación de algoritmos debido a que todavía está pendiente la calibración de hiperparámetros, entre otras técnicas.
+
+
+
+
