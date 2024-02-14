@@ -1,0 +1,96 @@
+ID,address,price,neighbourhood,style, bedrooms, bathrooms,Levels,area,year,property_type,area_with_garden
+421554,302-8235 rue George,360,Lasalle,2 Storey,3,2,2,1287,2007,house,1364.22
+578750,7317 avenue Rosaire Gendron,480,Lasalle,2 Storey,4,3,2,1485.42,2012,house,1693.3788
+716995,4713 rue cartier,749,Le plateau mont-royal,2 storey,3,2,2,1620,1912,house,1684.8
+691475,5806 rue des Roses,339,North Montreal,2 storey,3,2,2,1080,1964,house,1101.6
+653638,7920 Chemin Mackle,525,Cote-Saint-Luc,Detached,4,3,1,1300,1960,house,1768
+711418,6612 chemin Merton,665,Cote-Saint-Luc,Detached,4,2,2,4929.87,1957,house,6014.4414
+624182,5577 avenue Rosedale,788,Cote-Saint-Luc,Detached,5,3,2,7299.01,1956,house,9196.7526
+714354,3320 Lepailleur,349,Mercier / Hochelaga / Maisonneuve,Detached,3,2,1,1573,1952,house,2013.44
+716410,1970 rue Lepailleur,379,Mercier / Hochelaga / Maisonneuve,Detached,4,2,1,947,1951,house,1231.1
+715056,2981 rue Lyall,425,Mercier / Hochelaga / Maisonneuve,Detached,1,1,1,977.9,1955,house,1271.27
+714096,3300 Monsabr_,450,Mercier / Hochelaga / Maisonneuve,Detached,5,1,1,1080,1940,apartment,1296
+705869,2290 chemin Kildare,1195,mont-royal,Detached,3,2,3,1800,1956,apartment,1944
+465092,5-40706 boulevard L_ger,189,North Montreal,Detached,2,1,1,925.7,2008,apartment,1258.952
+710671,61605025 rue Pare,263,Céte-des-Neiges / Notre-Dame-de-Gr_ce,Divided Co-ownership,2,1,8,854.65,2009,apartment,1145.231
+700889,"1,5549 chemin queen mary",399,Cote-Saint-Luc,Divided Co-ownership,2,1,1,1107,1932,apartment,1151.28
+716421,308-288 rue Ann,239,Griffintown,Divided Co-ownership,1,1,1,550,2013,apartment,649
+618016,213-377 rue des Seigneurs,319,Griffintown,Divided Co-ownership,1,1,1,690,2013,apartment,897
+713480,722-225 Rue de la Montagne,392,Griffintown,Divided Co-ownership,2,1,1,744,2012,apartment,982.08
+706975,206-9125 rue airlie,275,Lasalle,Divided Co-ownership,2,1,1,1137,2012,apartment,1409.88
+558737,9895 boulevard lasalle,338,Lasalle,Divided Co-ownership,2,1,3,1098,2005,apartment,1449.36
+421962,206-1801 rue Senkus,348,Lasalle,Divided Co-ownership,2,1,4,1013,2007,apartment,1397.94
+641529,6837 rue Marie-guyart,355,Lasalle,Divided Co-ownership,3,1,2,1385,2004,apartment,1883.6
+655546,161 68e avenue,365,Lasalle,Divided Co-ownership,3,1,1,1301,2013,apartment,1353.04
+678870,5455 rue saint-and_,339,Le plateau mont-royal,Divided Co-ownership,2,1,1,980,2003,apartment,1332.8
+713812,2040 Saint-Cl_ment,225,Mercier / Hochelaga / Maisonneuve,Divided Co-ownership,2,1,1,750,1910,apartment,870
+705279,108-7705 rue Sherbrooke Est,270,Mercier / Hochelaga / Maisonneuve,Divided Co-ownership,2,1,1,920,2003,apartment,1012
+712388,2223-2225 Beaurivage,338,Mercier / Hochelaga / Maisonneuve,Divided Co-ownership,5,2,2,1724.38,1925,apartment,1965.7932
+715246,4798-4802 Adam,625,Mercier / Hochelaga / Maisonneuve,Divided Co-ownership,3,1,3,1860,2016,apartment,1971.6
+713812,2040 rue Saint-Cl_ment,2245,Mercier / Hochelaga / Maisonneuve,Divided Co-ownership,2,1,1,750,1910,apartment,810
+354943,5-1270 chemin regent,335,mont-royal,Divided Co-ownership,2,1,3,915,1944,apartment,1244.4
+696970,609-6501 Boulevard Maurice Duplessis,229,North Montreal,Divided Co-ownership,2,1,1,899.86,2013,apartment,1025.8404
+602000,502-6501 boulevard Maurice Duplessis,238,North Montreal,Divided Co-ownership,2,1,1,927,2013,apartment,1149.48
+394757,301-6080 rue Renoir,290,North Montreal,Divided Co-ownership,2,1,3,1175,1976,apartment,1551
+709588,950 Av Champagneur,455,Outremont,Divided Co-ownership,2,1,1,1145,2012,apartment,1328.2
+710673,681 Av Bloomfield,519,Outremont,Divided Co-ownership,2,1,1,1125,1925,apartment,1350
+716424,1530 Av Bernard Ouest,560,Outremont,Divided Co-ownership,2,1,1,1194,1927,apartment,1217.88
+710475,1530 Av Bernard,568,Outremont,Divided Co-ownership,2,1,1,1420,1927,apartment,1704
+596747,1120 Av Bernard,574,Outremont,Divided Co-ownership,2,1,1,1260,1928,apartment,1738.8
+712484,5165 Av Durocher,585,Outremont,Divided Co-ownership,3,1,1,1200,1909,apartment,1416
+630035,8112 avenue Dollard,695,Outremont,Divided Co-ownership,5,2,2,2200,1925,apartment,2420
+677008,929 avenue Hartland,785,Outremont,Divided Co-ownership,5,2,1,2338,1928,apartment,2665.32
+696922,31 terrasse les Hautvilliers,979,Outremont,Divided Co-ownership,3,3,3,2200,1976,apartment,3080
+616348,470 Rue Outremont,1679,Outremont,Divided Co-ownership,5,2,2,1300,1913,apartment,1534
+715645,5-1240 montcalm,289,Ville marie,Divided Co-ownership,2,2,1,847.12,1998,apartment,1185.968
+450016,103-550 Jean D'Estri,335,Ville marie,Divided Co-ownership,2,1,1,812,2005,apartment,941.92
+701403,1800 rene levesques W,343,Ville marie,Divided Co-ownership,1,1,1,775,2016,apartment,899
+714601,673 avenue atwater,388,Ville marie,Divided Co-ownership,3,1,1,1235,1987,apartment,1605.5
+714757,1800 rene levesques W,399,Ville marie,Divided Co-ownership,2,2,1,887,2016,apartment,1206.32
+714752,603-90 prince,544,Ville marie,Divided Co-ownership,3,2,1,1101,2010,apartment,1365.24
+701400,1800 rene levesques W,548,Ville marie,Divided Co-ownership,2,2,1,1209,2016,apartment,1305.72
+434822,4715 rue de la Peltrie,650,Céte-des-Neiges / Notre-Dame-de-Gr_ce,Duplex,6,3,2,3049.75,1951,apartment,3232.735
+714903,4052 Avenue Oxford,1375,Céte-des-Neiges / Notre-Dame-de-Gr_ce,Duplex,4,2,2,2600,1923,apartment,2652
+714678,2527 - 2529 chemin de la Cote-Sainte-Catherine,1470,Céte-des-Neiges / Notre-Dame-de-Gr_ce,Duplex,9,4,2,1770.72,1930,apartment,2054.0352
+696799,4688-4690 rue Cartier,835,Le plateau mont-royal,Duplex,4,2,2,1346,1929,apartment,1399.84
+712875,845-950 Rue Notre-Dame W,275,Griffintown,Loft,1,1,1,560,2011,apartment,784
+647610,1105-1000 rue Ottawa,275,Griffintown,Loft,1,1,1,530,2014,apartment,699.6
+699119,106-1205 rue Saint-Gregoire,234,Le plateau mont-royal,Loft,1,1,1,600,2008,apartment,684
+717076,4530 rue Clark,449,Le plateau mont-royal,Loft,1,1,1,928.93,2001,apartment,1300.502
+715446,4414 rue saint-andr_,1279,Le plateau mont-royal,Loft,4,3,2,1937.5,1902,apartment,2053.75
+713813,201-2097 Viau,262,Mercier / Hochelaga / Maisonneuve,Loft,2,1,1,1100,2008,apartment,1122
+713813,"2097 Viau, Apt. 201",262,Mercier / Hochelaga / Maisonneuve,Loft,2,1,1,1100,2008,apartment,1496
+699487,106-2355 Avenue Jeanne-D'Arc,299,North Montreal,Loft,1,1,1,960,1988,apartment,1190.4
+696692,2017 Avenue de Hampton,224,Céte-des-Neiges / Notre-Dame-de-Gr_ce,New Construction,2,1,1,865,2016,apartment,1055.3
+711421,2005 Hampton,264,Céte-des-Neiges / Notre-Dame-de-Gr_ce,New Construction,2,1,1,918,2016,apartment,1046.52
+697654,1102 - 4923 rue Jean-Talon,452,Céte-des-Neiges / Notre-Dame-de-Gr_ce,New Construction,2,2,1,1085,2016,apartment,1236.9
+714585,303-7923 rue Westover,189,Cote-Saint-Luc,New Construction,1,1,1,515,2009,apartment,721
+714531,Distrcit Griffin ZEN Phase 5 Unit 103,221,Griffintown,New Construction,1,1,1,576,2015,apartment,748.8
+714528,District Griffin Exalto,235,Griffintown,New Construction,1,1,1,603,2016,apartment,699.48
+714044,District griffin exalto,348,Griffintown,New Construction,2,2,6,848,2016,apartment,1000.64
+714534,"District Griffin Urbain, Phase 3",363,Griffintown,New Construction,2,1,1,856,2015,apartment,992.96
+716810,"Les Bassins du Havre, Le Quai 2b",383,Griffintown,New Construction,2,1,5,1000,2016,apartment,1120
+714535,District Griffin Urbain Phase 4,412,Griffintown,New Construction,2,1,1,984,2015,apartment,1377.6
+713771,8050 rue Jean-Chevalier,359,Lasalle,New Construction,2,2,1,1115,2016,apartment,1449.5
+617641,Cit_ Plateau,1763,Le plateau mont-royal,New Construction,1,1,4,578,2016,apartment,693.6
+710883,114-2335 chemin Manella,235,mont-royal,New Construction,2,1,7,861,2015,apartment,1205.4
+659203,225 chemin Bates,360,mont-royal,New Construction,2,2,7,977,2016,apartment,1055.16
+702955,"1,5498 robert-Burns street",120,Cote-Saint-Luc,Open area,1,1,1,506,2008,apartment,597.08
+673718,101-1940 rue Saint-Jacques,290,Griffintown,Open area,2,1,1,806,1985,apartment,1128.4
+636952,311-1869 rue Basin,390,Griffintown,Open area,2,1,1,875,2014,apartment,892.5
+578710,707-1900 rue angrignon,529,Lasalle,Open area,2,2,1,1270,2012,apartment,1371.6
+707003,202-5099 rue Jeanne-Mance,255,Le plateau mont-royal,Open area,1,1,1,611,1996,apartment,659.88
+420134,502-6900 boulevard Gouin Est,359,North Montreal,Open area,3,2,1,1350,1882,apartment,1701
+716608,904-901 de la commune E,339,Ville marie,Open area,1,1,1,660,2013,apartment,699.6
+674451,6237 - 6239 Avenue Clanranald,575,Céte-des-Neiges / Notre-Dame-de-Gr_ce,Semi detached,5,2,2,880,1949,house,985.6
+697870,6156 avenue MacDonald,460,Cote-Saint-Luc,Semi detached,2,1,1,607.08,1950,house,801.3456
+509235,113-2285 av Ekers,259,mont-royal,Semi detached,1,1,1,731,2013,house,906.44
+457060,3334-36 chemin cote de liesse,489,mont-royal,Semi detached,6,2,2,2585.49,1963,house,3206.0076
+558602,305-9307 boulevard Lasalle,390,Lasalle,Townhouse,2,2,4,1059,2009,house,1313.16
+684755,7613 boulevard Lasalle,482,Lasalle,Townhouse,2,1,1,1505,1993,house,1926.4
+623540,1912 rue du Bois-des-Caryers,599,Lasalle,Townhouse,4,2,2,1792.19,2012,house,2114.7842
+714837,5917 rue Claude-Masson,388,Mercier / Hochelaga / Maisonneuve,Townhouse,3,1,3,1473,2013,house,1914.9
+691099,325-575 avenue Glengarry,379,mont-royal,Townhouse,3,2,1,1227,1965,house,1447.86
+461148,12264 Avenue Brunet,330,North Montreal,Townhouse,3,1,2,2000,2004,house,2360
+626315,5901 rue Hutchinson,435,Outremont,Townhouse,3,1,1,1360,1914,house,1740.8
+410127,557 chemin de la Cote Sainte Catherine,1895,Outremont,Townhouse,5,3,2,5000,1913,house,6600
